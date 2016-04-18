@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
 body{
   font-family: 'Cambria', serif;
 }
@@ -8,6 +14,9 @@ h1{
 h2{
   font-size: 14px;
 }
+h3{
+  font-size: 12px;
+}
 
 header{
   text-align: center;
@@ -15,10 +24,7 @@ header{
 
 nav li{
   display: inline-block;
-  font-size: 18px;
-}
-nav li :not(img){
-  border-bottom: 1px solid black;
+  font-size: 14px;
 }
 
 a{
@@ -27,4 +33,14 @@ a{
 
 li{
   list-style: none;
+}
+
+.portfolioContent{
+  display: none;
+}
+section#portfolioNav{
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  display: none;
 }

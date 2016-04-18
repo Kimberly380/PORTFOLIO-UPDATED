@@ -12,3 +12,20 @@
 .navRight2{
  width: 20%;
 }
+ul.portfolioNav{
+  width: 100%;
+  text-align: center;
+  color: #f47878;
+  font-size: 18px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+ul.portfolioNav li{
+  display: inline-block;
+}
+
+ul.portfolioNav li img{
+  display: block;
+  position: relative;
+}

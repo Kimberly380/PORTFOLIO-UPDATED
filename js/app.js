@@ -19,13 +19,12 @@ projectData.forEach(function(ele){
 
 //pushes each project in projectsArray to html...
 projectsArray.forEach(function(a){
-  $('#portfolioPage').append(a.toHtml());
+  $('.portfolioContent').append(a.toHtml());
 });
 
 
-$('#portfolioPage').hide();
+//##### begin dynamic navigation ########################
 
-$('.navLeft1').on('click',function(){
-  $
-
+$('.navLeft2').on('click',function(){
+  $('#portfolioNav').show();
 });
