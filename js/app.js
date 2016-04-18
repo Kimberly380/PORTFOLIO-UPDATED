@@ -12,16 +12,20 @@ Project.prototype.toHtml = function() {
 
 };
 
-
-
-
 //push new projects from raw data into projects Array
 projectData.forEach(function(ele){
   projectsArray.push(new Project(ele));
 });
 
-
 //pushes each project in projectsArray to html...
-projects.forEach(function(a){
-  $('#projects'.append(a.toHtml()));
+projectsArray.forEach(function(a){
+  $('#portfolioPage').append(a.toHtml());
+});
+
+
+$('#portfolioPage').hide();
+
+$('.navLeft1').on('click',function(){
+  $
+
 });

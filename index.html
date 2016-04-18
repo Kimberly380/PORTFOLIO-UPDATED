@@ -3,48 +3,48 @@
   <head>
     <meta charset='utf-8'>
     <title>Kim's Portfolio</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=yes'>
+    <link rel='stylesheet' href='css/baseStyle.css' />
+    <link rel='stylesheet' href='css/layout.css' />
 
     <!-- include handlebars template: -->
     <script id="portfolioTemplate" type="text/x-handlebars-template">
       <h1>{{category}}</h1>
       <h2>{{projectName}}</h2>
-      {{#each roles}}
-      <h3>{{role}}</h3>
-      {{/each}}
-      <p>{{{projectDescrip}}}</P>
-      <img src="{{images[0]}}"/>
+      <h3>{{Myrole}}</h3>
+        <p>{{{projectDescrip}}}</P>
+      <img src="{{images.[1].image}}"/>
 
       <ul>
         {{#each images}}
-        <li>{{image}}</li>
+        <li><img src={{image}} /></li>
         {{/each}}
       </ul>
     </script>
     <!-- finished template -->
-
-    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=yes'>
-    <link rel='stylesheet' href='css/baseStyle.css' />
   </head>
-  <body>
-
-  <header>
-    <img src='images/myLogo.png' />
-    <nav>
-      <ul>
-        <li>About</li>
-        <li>Portfolio</li>
-        <li>Resume</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-  </header>
 
   <body>
+    <header>
+
+      <nav>
+        <ul>
+          <li class="navLeft1">About</li>
+          <li class="navLeft2">Portfolio</li>
+          <li><img src='images/myLogo.png' /></li>
+          <li class="navRight1">Resume</li>
+          <li class="navRight2">Contact</li>
+        </ul>
+      </nav>
+    </header>
 
 
 
 
 
+
+    <section id='portfolioPage'>
+    </section>
 
   </body>
     <script src='https://code.jquery.com/jquery-2.2.3.min.js'></script>

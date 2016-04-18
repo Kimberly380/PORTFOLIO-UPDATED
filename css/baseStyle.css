@@ -1,0 +1,30 @@
+body{
+  font-family: 'Cambria', serif;
+}
+
+h1{
+  font-size: 18px;
+}
+h2{
+  font-size: 14px;
+}
+
+header{
+  text-align: center;
+}
+
+nav li{
+  display: inline-block;
+  font-size: 18px;
+}
+nav li :not(img){
+  border-bottom: 1px solid black;
+}
+
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
