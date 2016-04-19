@@ -1,4 +1,4 @@
-projectsArray = [];
+Project.allData = [];
 
 //object constructor
 function Project (dataObj) {
@@ -14,9 +14,28 @@ Project.prototype.toHtml = function() {
 };
 
 //push new projects from raw data into projects Array
-projectData.forEach(function(ele){
-  projectsArray.push(new Project(ele));
-});
+Project.populateArray = function(jData){
+  jData.forEach(function(ele){
+    Project.allData.push(new Project(ele));
+  });
+};
+  
+  
+//#### data pull (asynchronous) ######################
+
+if (localStorage.storedData){
+  Project.populateArray(
+    JSON.parse(localStorage.getItem('storedData'))
+  );
+} else {
+  $.getJSON('data/myData.json').done(function(data){
+    Project.populateArray(data);
+    localStorage.setItem('storedData',JSON.stringify(data));
+  });  
+}
+
+
+
 
 
 //##### begin event listeners ########################
@@ -32,17 +51,17 @@ $('nav >ul').on('click','li',function(){
 $('#portfolioNavUl').on('click','li',function(){
  
   $('.portfolioContent').remove();  //to remove & then re-create section
-  $('#portfolioView').append("<section class='portfolioContent'></section>");
+  $('#portfolioView').append('<section class=\'portfolioContent\'></section>');
   
-  var category = $(this).attr('data-filter');  //collect category selected
+  var categorySelected = $(this).attr('data-filter');  //collect category selected
   var filteredArray = [];
     
-  filteredArray = $.grep(projectsArray, function(cat,i) {  //filter data by category
-    return (cat.category=== category);
+  filteredArray = $.grep(Project.allData, function(cat,i) {  //filter data by category
+    return (cat.category === categorySelected);
   });
-  
+  console.log(filteredArray);
   filteredArray.forEach(function(a){  //append filtered data to section
-    $('.portfolioContent').append(a.toHtml()).show()
+    $('.portfolioContent').append(a.toHtml()).show();
   });
 });
   

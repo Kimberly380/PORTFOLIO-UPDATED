@@ -51,3 +51,9 @@ var projectData = [
     images:[{image:'images/placeholderImg1.png', image:'images/placeholderImg1.png', image:'images/placeholderImg2.png'}]
   }
 ];
+
+
+
+
+
+console.log(JSON.stringify(projectData));
