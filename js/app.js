@@ -17,34 +17,39 @@ projectData.forEach(function(ele){
   projectsArray.push(new Project(ele));
 });
 
-//pushes each project in projectsArray to html...
-projectsArray.forEach(function(a){
-  $('.portfolioContent').append(a.toHtml());
-});
-
-
 //##### begin event listeners ########################
 
-//dynamic navigation
+//dynamic navigation for main nav
 $('nav >ul').on('click','li',function(){
-  $("#"+$(this).attr('data-link')).show();
-  $('main').not("#"+$(this).attr('data-link')).hide();
+  $('#'+$(this).attr('data-link')).show();
+  $('main').not('#'+$(this).attr('data-link')).hide();
 });
 
-//portfolio nav: filter objects by category selected
 
+//portfolio nav: filter objects being shown by nav category selected
 $('#portfolioNavUl').on('click','li',function(){
-  console.log($(this).attr('data-filter'));
+ 
+  $('.portfolioContent').remove();  //to remove & then re-create section
+  $('#portfolioView').append("<section class='portfolioContent'></section>");
   
-  
-  
-  $('.portfolioContent').show()
-})
+  var category = $(this).attr('data-filter');  //collect category selected
+  var filteredArray = [];
     
-var filteredArray = $.grep(projectsArray, function(cat,i) {
-  return (cat.category==='dataViz');
+  filteredArray = $.grep(projectsArray, function(cat,i) {  //filter data by category
+    return (cat.category=== category);
+  });
+  
+  filteredArray.forEach(function(a){  //append filtered data to section
+    $('.portfolioContent').append(a.toHtml()).show()
+  });
 });
-console.log(filteredArray);
+  
+
+
+  
+
+
+
   
 
 
