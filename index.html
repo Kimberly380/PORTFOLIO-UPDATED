@@ -26,32 +26,30 @@
 
   <body>
     <header>
-
       <nav>
         <ul>
-          <li class="navLeft1">About</li>
-          <li class="navLeft2">Portfolio</li>
-          <li><img src='images/myLogo.png' /></li>
-          <li class="navRight1">Resume</li>
-          <li class="navRight2">Contact</li>
+          <li class="navLeft1" data-link="aboutView">About</li>
+          <li class="navLeft2" data-link="portfolioView">Portfolio</li>
+          <li data-link="homeView"><img src='images/myLogo.png' /></li>
+          <li class="navRight1" data-link="resumeView">Resume</li>
+          <li class="navRight2" data-link="contactView">Contact</li>
         </ul>
       </nav>
     </header>
 
-    <section id="portfolioNav">
-      <ul class='portfolioNav'>
-        <li><img src='images/vizicon.png' />Visualization</li>
-        <li><img src='images/techIcon.png' />Technology</li>
-        <li><img src='images/analysisIcon.png' />Analysis</li>
-        <li><img src='images/designIcon.png' />Design</li>
-      </ul>
-      <h3>Click on project type you'd like to see.</h3>
-    </section>
-
-
-    <section class='portfolioContent'>
-
-    </section>
+    <main data-link="portfolioView">
+      <section id="portfolioNav">
+        <ul class='portfolioNav'>
+          <li><img src='images/vizicon.png' />Visualization</li>
+          <li><img src='images/techIcon.png' />Technology</li>
+          <li><img src='images/analysisIcon.png' />Analysis</li>
+          <li><img src='images/designIcon.png' />Design</li>
+        </ul>
+        <h3>Click on project type you'd like to see.</h3>
+      </section>
+      <section class='portfolioContent'>
+      </section>
+  </main>
 
   </body>
     <script src='https://code.jquery.com/jquery-2.2.3.min.js'></script>

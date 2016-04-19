@@ -21,10 +21,13 @@ h3{
 header{
   text-align: center;
 }
-
+nav ul{
+  white-space: nowrap;
+}
 nav li{
   display: inline-block;
   font-size: 14px;
+  padding: 15px;
 }
 
 a{

@@ -12,6 +12,10 @@
 .navRight2{
  width: 20%;
 }
+/*nav li :not(li img){
+  margin-top: -25px;
+}*/
+
 ul.portfolioNav{
   width: 100%;
   text-align: center;
@@ -27,5 +31,5 @@ ul.portfolioNav li{
 
 ul.portfolioNav li img{
   display: block;
-  position: relative;
+  margin: 0 auto;
 }

@@ -25,6 +25,12 @@ projectsArray.forEach(function(a){
 
 //##### begin dynamic navigation ########################
 
+$('nav >ul').on('click',function(){
+  console.log($('this').attr('data-link'));
+
+});
+
+
 $('.navLeft2').on('click',function(){
   $('#portfolioNav').show();
 });
