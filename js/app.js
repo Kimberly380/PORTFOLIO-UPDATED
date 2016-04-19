@@ -5,6 +5,7 @@ function Project (dataObj) {
   for (key in dataObj) this[key] = dataObj[key];
 }
 
+//populate template to display data
 Project.prototype.toHtml = function() {
   var source = $('#portfolioTemplate').html();
   var template = Handlebars.compile(source);
@@ -16,6 +17,7 @@ Project.prototype.toHtml = function() {
 projectData.forEach(function(ele){
   projectsArray.push(new Project(ele));
 });
+
 
 //##### begin event listeners ########################
 
