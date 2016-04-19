@@ -16,7 +16,7 @@
   margin-top: -25px;
 }*/
 
-ul.portfolioNav{
+ul#portfolioNavUl{
   width: 100%;
   text-align: center;
   color: #f47878;
@@ -25,11 +25,11 @@ ul.portfolioNav{
   margin: 0 auto;
 }
 
-ul.portfolioNav li{
+ul#portfolioNavUl li{
   display: inline-block;
 }
 
-ul.portfolioNav li img{
+ul#portfolioNavUl li img{
   display: block;
   margin: 0 auto;
 }

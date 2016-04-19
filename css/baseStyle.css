@@ -45,5 +45,20 @@ section#portfolioNav{
   width: 100%;
   text-align: center;
   margin-top: 50px;
+}
+main#portfolioView{
   display: none;
 }
+main#aboutView{
+  display:none;
+}
+main#resumeView{
+  display:none;
+}
+main#contactView{
+  display:none;
+}
+main#homeView{
+  display:none;
+}
+

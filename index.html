@@ -13,7 +13,7 @@
       <h2>{{projectName}}</h2>
       <h3>{{Myrole}}</h3>
         <p>{{{projectDescrip}}}</P>
-      <img src="{{images.[1].image}}"/>
+      <!--<img src="{{images.[1].image}}"/>-->
 
       <ul>
         {{#each images}}
@@ -36,18 +36,42 @@
         </ul>
       </nav>
     </header>
+    
+<main id="homeView">
+  <section class='homeContent'>
+    <h1>HERE'S MY INTRO!</hi>
+  </section>
+</main>
 
-    <main data-link="portfolioView">
+<main id="aboutView">
+      <section class='aboutContent'>
+        <h1>THIS PAGE IS ALL ABOUT ME!!</hi>
+      </section>
+  </main>
+
+    <main id="portfolioView">
       <section id="portfolioNav">
-        <ul class='portfolioNav'>
-          <li><img src='images/vizicon.png' />Visualization</li>
-          <li><img src='images/techIcon.png' />Technology</li>
-          <li><img src='images/analysisIcon.png' />Analysis</li>
-          <li><img src='images/designIcon.png' />Design</li>
+        <ul id='portfolioNavUl'>
+          <li data-filter='dataViz'><img src='images/vizicon.png' />Visualization</li>
+          <li data-filter='technology'><img src='images/techIcon.png' />Technology</li>
+          <li data-filter='analysis'><img src='images/analysisIcon.png' />Analysis</li>
+          <li data-filter='design'><img src='images/designIcon.png' />Design</li>
         </ul>
         <h3>Click on project type you'd like to see.</h3>
       </section>
       <section class='portfolioContent'>
+      </section>
+  </main>
+  
+  <main id="resumeView">
+      <section class='resumeContent'>
+        <h1>THIS IS WHERE I CAN ATTACH MY RESUME!!</hi>
+      </section>
+  </main>
+  
+   <main id="contactView">
+      <section class='contactContent'>
+        <h1>HERE'S MY NUMBER.  CALL ME!</hi>
       </section>
   </main>
 
@@ -58,3 +82,6 @@
     <script src='js/app.js'></script>
   </body>
 </html>
+
+
+
