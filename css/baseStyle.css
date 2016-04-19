@@ -48,6 +48,7 @@ section#portfolioNav{
 }
 main#portfolioView{
   display: none;
+  text-align: center;
 }
 main#aboutView{
   display:none;
@@ -61,4 +62,6 @@ main#contactView{
 main#homeView{
   display:none;
 }
-
+#dataAlert{
+  display:none;
+}

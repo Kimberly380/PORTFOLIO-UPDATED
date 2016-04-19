@@ -33,3 +33,8 @@ ul#portfolioNavUl li img{
   display: block;
   margin: 0 auto;
 }
+
+#dataAlert{  
+  padding-top: 65px;
+  font-size: 22px;
+}

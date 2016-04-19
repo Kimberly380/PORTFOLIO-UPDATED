@@ -27,15 +27,14 @@ if (localStorage.storedData){
   Project.populateArray(
     JSON.parse(localStorage.getItem('storedData'))
   );
+  portfolioClick();
 } else {
-  $.getJSON('data/myData.json').done(function(data){
+  $.getJSON('/myData.json').done(function(data){
     Project.populateArray(data);
     localStorage.setItem('storedData',JSON.stringify(data));
-  });  
+    portfolioClick();
+  }).fail(alertUser);
 }
-
-
-
 
 
 //##### begin event listeners ########################
@@ -48,30 +47,31 @@ $('nav >ul').on('click','li',function(){
 
 
 //portfolio nav: filter objects being shown by nav category selected
-$('#portfolioNavUl').on('click','li',function(){
- 
-  $('.portfolioContent').remove();  //to remove & then re-create section
-  $('#portfolioView').append('<section class=\'portfolioContent\'></section>');
-  
-  var categorySelected = $(this).attr('data-filter');  //collect category selected
-  var filteredArray = [];
+function portfolioClick(){
+  $('#portfolioNavUl').on('click','li',function(){
+    $('.portfolioContent').remove();  //to remove & then re-create section
+    $('#portfolioView').append('<section class=\'portfolioContent\'></section>');
     
-  filteredArray = $.grep(Project.allData, function(cat,i) {  //filter data by category
-    return (cat.category === categorySelected);
+    var categorySelected = $(this).attr('data-filter');  //collect category selected
+    var filteredArray = [];
+      
+    filteredArray = $.grep(Project.allData, function(cat,i) {  //filter data by category
+      return (cat.category === categorySelected);
+    });
+    console.log(filteredArray);
+    filteredArray.forEach(function(a){  //append filtered data to section
+      $('.portfolioContent').append(a.toHtml()).show();
+    });
   });
-  console.log(filteredArray);
-  filteredArray.forEach(function(a){  //append filtered data to section
-    $('.portfolioContent').append(a.toHtml()).show();
-  });
-});
-  
+} 
 
+ 
+function alertUser(){
+  $('#portfolioNavUl').on('click','li',(function(){
+    $('#dataAlert').show();
+  }));
+} 
 
-  
-
-
-
-  
 
 
 
