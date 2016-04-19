@@ -1,0 +1,40 @@
+ .navLeft1{
+  width: 20%;
+}
+
+.navLeft2{
+ width: 20%;
+}
+
+.navRight1{
+ width: 20%;
+}
+.navRight2{
+ width: 20%;
+}
+/*nav li :not(li img){
+  margin-top: -25px;
+}*/
+
+ul#portfolioNavUl{
+  width: 100%;
+  text-align: center;
+  color: #f47878;
+  font-size: 18px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+ul#portfolioNavUl li{
+  display: inline-block;
+}
+
+ul#portfolioNavUl li img{
+  display: block;
+  margin: 0 auto;
+}
+
+#dataAlert{  
+  padding-top: 65px;
+  font-size: 22px;
+}

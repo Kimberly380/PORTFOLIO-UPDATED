@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Kim's Portfolio</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=yes'>
+    <link rel='stylesheet' href='css/baseStyle.css' />
+    <link rel='stylesheet' href='css/layout.css' />
+
+    <!-- include handlebars template: -->
+    <script id="portfolioTemplate" type="text/x-handlebars-template">
+      <h1>{{category}}</h1>
+      <h2>{{projectName}}</h2>
+      <h3>{{Myrole}}</h3>
+        <p>{{{projectDescrip}}}</P>
+      <!--<img src="{{images.[1].image}}"/>-->
+
+      <ul>
+        {{#each images}}
+        <li><img src={{image}} /></li>
+        {{/each}}
+      </ul>
+    </script>
+    <!-- finished template -->
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="navLeft1" data-link="aboutView">About</li>
+          <li class="navLeft2" data-link="portfolioView">Portfolio</li>
+          <li data-link="homeView"><img src='images/myLogo.png' /></li>
+          <li class="navRight1" data-link="resumeView">Resume</li>
+          <li class="navRight2" data-link="contactView">Contact</li>
+        </ul>
+      </nav>
+    </header>
+    
+<main id="homeView">
+  <section class='homeContent'>
+    <h1>HERE'S MY INTRO!</hi>
+  </section>
+</main>
+
+<main id="aboutView">
+      <section class='aboutContent'>
+        <h1>THIS PAGE IS ALL ABOUT ME!!</hi>
+      </section>
+  </main>
+
+    <main id="portfolioView">
+      <section id="portfolioNav">
+        <ul id='portfolioNavUl'>
+          <li data-filter='dataViz'><img src='images/vizicon.png' />Visualization</li>
+          <li data-filter='technology'><img src='images/techIcon.png' />Technology</li>
+          <li data-filter='analysis'><img src='images/analysisIcon.png' />Analysis</li>
+          <li data-filter='design'><img src='images/designIcon.png' />Design</li>
+        </ul>
+        <h3>Click on project type you'd like to see.</h3>
+      </section>
+      <section class='portfolioContent'>
+      </section>
+       <div id='dataAlert'>So sorry. My portfolio is unavailable at this time.</div>
+  </main>
+  
+  <main id="resumeView">
+      <section class='resumeContent'>
+        <h1>THIS IS WHERE I CAN ATTACH MY RESUME!!</hi>
+      </section>
+  </main>
+  
+   <main id="contactView">
+      <section class='contactContent'>
+        <h1>HERE'S MY NUMBER.  CALL ME!</hi>
+      </section>
+  </main>
+
+  </body>
+    <script src='https://code.jquery.com/jquery-2.2.3.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src='data/myData.json'></script>
+    <script src='js/app.js'></script>
+  </body>
+</html>
+
+
+
