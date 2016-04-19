@@ -3,7 +3,7 @@ Project.allData = [];
 //object constructor
 function Project (dataObj) {
   for (key in dataObj) this[key] = dataObj[key];
-}
+};
 
 //populate template to display data
 Project.prototype.toHtml = function() {
@@ -29,7 +29,7 @@ if (localStorage.storedData){
   );
   portfolioClick();
 } else {
-  $.getJSON('/myData.json').done(function(data){
+  $.getJSON('data/myData.json').done(function(data){
     Project.populateArray(data);
     localStorage.setItem('storedData',JSON.stringify(data));
     portfolioClick();
@@ -41,8 +41,10 @@ if (localStorage.storedData){
 
 //dynamic navigation for main nav
 $('nav >ul').on('click','li',function(){
-  $('#'+$(this).attr('data-link')).show();
-  $('main').not('#'+$(this).attr('data-link')).hide();
+  var mainId = $('#'+$(this).attr('data-link'));
+  
+  mainId.show();
+  $('main').not(mainId).hide();
 });
 
 
@@ -53,9 +55,8 @@ function portfolioClick(){
     $('#portfolioView').append('<section class=\'portfolioContent\'></section>');
     
     var categorySelected = $(this).attr('data-filter');  //collect category selected
-    var filteredArray = [];
-      
-    filteredArray = $.grep(Project.allData, function(cat,i) {  //filter data by category
+         
+    var filteredArray = $.grep(Project.allData, function(cat,i) {  //filter data by category
       return (cat.category === categorySelected);
     });
     console.log(filteredArray);
