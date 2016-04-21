@@ -11,9 +11,9 @@
     <script id="portfolioTemplate" type="text/x-handlebars-template">
       <h1>{{category}}</h1>
       <h2>{{projectName}}</h2>
-      <h3>{{Myrole}}</h3>
+      <h3>{{myRole}}</h3>
         <p>{{{projectDescrip}}}</P>
-      <!--<img src="{{images.[1].image}}"/>-->
+      <img src="{{thumbnail}}"/>
 
       <ul>
         {{#each images}}
@@ -37,17 +37,17 @@
       </nav>
     </header>
     
-<main id="homeView">
-  <section class='homeContent'>
-    <h1>HERE'S MY INTRO!</hi>
-  </section>
-</main>
-
-<main id="aboutView">
-      <section class='aboutContent'>
-        <h1>THIS PAGE IS ALL ABOUT ME!!</hi>
+    <main id="homeView">
+      <section class='homeContent'>
+        <h1>HERE'S MY INTRO!</hi>
       </section>
-  </main>
+    </main>
+
+    <main id="aboutView">
+          <section class='aboutContent'>
+            <h1>THIS PAGE IS ALL ABOUT ME!!</hi>
+          </section>
+    </main>
 
     <main id="portfolioView">
       <section id="portfolioNav">
@@ -61,22 +61,21 @@
       </section>
       <section class='portfolioContent'>
       </section>
-       <div id='dataAlert'>So sorry. My portfolio is unavailable at this time.</div>
-  </main>
-  
-  <main id="resumeView">
-      <section class='resumeContent'>
-        <h1>THIS IS WHERE I CAN ATTACH MY RESUME!!</hi>
-      </section>
-  </main>
-  
-   <main id="contactView">
-      <section class='contactContent'>
-        <h1>HERE'S MY NUMBER.  CALL ME!</hi>
-      </section>
-  </main>
-
-  </body>
+      <div id='dataAlert'>So sorry. My portfolio is unavailable at this time.</div>
+    </main>
+      
+    <main id="resumeView">
+        <section class='resumeContent'>
+          <h1>THIS IS WHERE I CAN ATTACH MY RESUME!!</hi>
+        </section>
+    </main>
+      
+    <main id="contactView">
+        <section class='contactContent'>
+          <h1>HERE'S MY NUMBER.  CALL ME!</hi>
+        </section>
+    </main>
+ 
     <script src='https://code.jquery.com/jquery-2.2.3.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src='data/myData.json'></script>

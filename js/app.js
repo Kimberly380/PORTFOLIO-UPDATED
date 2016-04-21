@@ -13,10 +13,22 @@ Project.prototype.toHtml = function() {
   return template(this);
 };
 
+
+  
+//trying to create array of first images from Project.allData.images to add to template
+Project.createThumbnails = function() {
+  return Project.allData.map(function(img){
+    return {thumbnail: img.images[0]};
+  });
+};
+
+
+
+
 //push new projects from raw data into projects Array
 Project.populateArray = function(jData){
-  jData.forEach(function(ele){
-    Project.allData.push(new Project(ele));
+  Project.allData = jData.map(function(ele){
+    return new Project(ele);
   });
 };
   
@@ -28,6 +40,7 @@ if (localStorage.storedData){
     JSON.parse(localStorage.getItem('storedData'))
   );
   portfolioClick();
+  Project.createThumbnails();
 } else {
   $.getJSON('data/myData.json').done(function(data){
     Project.populateArray(data);
@@ -59,13 +72,11 @@ function portfolioClick(){
     var filteredArray = $.grep(Project.allData, function(cat,i) {  //filter data by category
       return (cat.category === categorySelected);
     });
-    console.log(filteredArray);
     filteredArray.forEach(function(a){  //append filtered data to section
       $('.portfolioContent').append(a.toHtml()).show();
     });
   });
 } 
-
  
 function alertUser(){
   $('#portfolioNavUl').on('click','li',(function(){
