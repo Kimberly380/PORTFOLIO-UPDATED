@@ -44,7 +44,7 @@ $('nav >ul').on('click','li',function(){
   var mainId = $('#'+$(this).attr('data-link'));
   
   mainId.show();
-  $('main').not(mainId).hide();
+  $('section').not(mainId).hide();
 });
 
 
@@ -74,5 +74,42 @@ function alertUser(){
 } 
 
 
+//##practice closures ##############################
+var $button1 = $('#buttonOne');
+var $button2 = $('#buttonTwo');
+var $printText = $('#output');
+var $userName = $('#userName');
+var userName;
 
+$userName.change(function(){
+  useName($userName.val(), setButton);
+  $('label').hide();
+})
 
+function useName (name,onClick){
+  var currName = name;
+  $button1.html('Hi ' + currName + ' Click Here!').show('medium');
+  $userName.hide();  
+  $button1.on("click",function(){
+    onClick(currName);
+  });
+}
+
+function setButton (name){
+  pushTheButton(name);
+  $button1.hide();
+  $button2.delay(800).show('medium');  
+}
+
+function printSomeStuff (a){
+  return function(b) {
+    $printText.empty().append('Congratulations, '+ b + '!' + a);   
+  };   
+}
+var pushTheButton = printSomeStuff ("You pushed the button!");
+
+$button2.on("click",function(){
+  $printText.empty().append("Thanks for Playing!");
+  $button2.hide();
+  $printText.delay(800).hide('medium');
+});

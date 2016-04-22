@@ -37,19 +37,27 @@
       </nav>
     </header>
     
-<main id="homeView">
-  <section class='homeContent'>
-    <h1>HERE'S MY INTRO!</hi>
-  </section>
-</main>
-
-<main id="aboutView">
-      <section class='aboutContent'>
-        <h1>THIS PAGE IS ALL ABOUT ME!!</hi>
+    <section id='practiceClosures'>
+      <label>What's your name?</label>
+      <input  id="userName"></input>
+      <button id="buttonOne">ClickMe!</button>
+      <p id="output"></p>
+      <button id="buttonTwo">Click to clear page</button>
+    </section>
+    
+    <section id="homeView">
+      <section class='homeContent'>
+        <h1>HERE'S MY INTRO!</hi>
       </section>
-  </main>
+    </sectionn>
 
-    <main id="portfolioView">
+    <section id="aboutView">
+          <section class='aboutContent'>
+            <h1>THIS PAGE IS ALL ABOUT ME!!</hi>
+          </section>
+    </section>
+
+    <section id="portfolioView">
       <section id="portfolioNav">
         <ul id='portfolioNavUl'>
           <li data-filter='dataViz'><img src='images/vizicon.png' />Visualization</li>
@@ -60,23 +68,26 @@
         <h3>Click on project type you'd like to see.</h3>
       </section>
       <section class='portfolioContent'>
+        <div id="mainImage"></div>
+        <div id="mainText"></div>
+        <div id="thumbnailImg"</div>
       </section>
-       <div id='dataAlert'>So sorry. My portfolio is unavailable at this time.</div>
-  </main>
-  
-  <main id="resumeView">
+        <div id='dataAlert'>So sorry. My portfolio is unavailable at this time.</div>
+    </section>
+      
+    <section id="resumeView">
       <section class='resumeContent'>
         <h1>THIS IS WHERE I CAN ATTACH MY RESUME!!</hi>
       </section>
-  </main>
-  
-   <main id="contactView">
+    </section>
+      
+    <section id="contactView">
       <section class='contactContent'>
         <h1>HERE'S MY NUMBER.  CALL ME!</hi>
       </section>
-  </main>
+    </section>
 
-  </body>
+ 
     <script src='https://code.jquery.com/jquery-2.2.3.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src='data/myData.json'></script>
