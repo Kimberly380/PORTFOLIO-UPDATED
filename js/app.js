@@ -47,7 +47,6 @@ $('nav >ul').on('click','li',function(){
   $('main').not(mainId).hide();
 });
 
-
 //portfolio nav: filter objects being shown by nav category selected
 function portfolioClick(){
   $('#portfolioNavUl').on('click','li',function(){
@@ -59,7 +58,6 @@ function portfolioClick(){
     var filteredArray = $.grep(Project.allData, function(cat,i) {  //filter data by category
       return (cat.category === categorySelected);
     });
-    console.log(filteredArray);
     filteredArray.forEach(function(a){  //append filtered data to section
       $('.portfolioContent').append(a.toHtml()).show();
     });
@@ -72,6 +70,10 @@ function alertUser(){
     $('#dataAlert').show();
   }));
 } 
+
+
+//closures
+
 
 
 
