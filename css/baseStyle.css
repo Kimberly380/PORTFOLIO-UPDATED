@@ -46,22 +46,29 @@ section#portfolioNav{
   text-align: center;
   margin-top: 50px;
 }
-main#portfolioView{
+#portfolioView{
   display: none;
   text-align: center;
 }
-main#aboutView{
+#aboutView{
   display:none;
 }
-main#resumeView{
+#resumeView{
   display:none;
 }
-main#contactView{
+#contactView{
   display:none;
 }
-main#homeView{
+#homeView{
   display:none;
 }
 #dataAlert{
   display:none;
+}
+button{
+  display:none;
+}
+#practiceClosures{
+  text-align: center;
+  margin-top: 35px;
 }
