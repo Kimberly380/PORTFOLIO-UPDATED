@@ -40,6 +40,8 @@ if (localStorage.storedData){
 //##### begin event listeners ########################
 
 //dynamic navigation for main nav
+
+
 $('nav >ul').on('click','li',function(){
   var mainId = $('#'+$(this).attr('data-link'));
   var closures = $('#practiceClosures');
@@ -114,3 +116,5 @@ $button2.on("click",function(){
   $button2.hide();
   $printText.delay(800).hide('medium');
 });
+
+//######################################
