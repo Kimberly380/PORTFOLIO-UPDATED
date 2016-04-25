@@ -42,9 +42,10 @@ if (localStorage.storedData){
 //dynamic navigation for main nav
 $('nav >ul').on('click','li',function(){
   var mainId = $('#'+$(this).attr('data-link'));
-  
   mainId.show();
-  $('section').not(mainId).hide();
+  $('page-view').not(mainId).hide();
+  $('#practiceClosures').hide();
+  $('.portfolioContent').hide();
 });
 
 
@@ -59,14 +60,21 @@ function portfolioClick(){
     var filteredArray = $.grep(Project.allData, function(cat,i) {  //filter data by category
       return (cat.category === categorySelected);
     });
-    console.log(filteredArray);
-    filteredArray.forEach(function(a){  //append filtered data to section
-      $('.portfolioContent').append(a.toHtml()).show();
+    
+    var thumbnailArray =filteredArray.map(function(obj){
+      return obj.images[0];
     });
+    thumbnailArray.forEach(function(a){ 
+      $('#thumbnailImg').append(a.toHtml()).show();
+    });
+    
+    // filteredArray.forEach(function(a){  //append filtered data to section
+    //   $('.portfolioContent').append(a.toHtml()).show();
+    // });
   });
 } 
 
- 
+//alert user when data not loading 
 function alertUser(){
   $('#portfolioNavUl').on('click','li',(function(){
     $('#dataAlert').show();
