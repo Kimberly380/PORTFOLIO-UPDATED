@@ -42,9 +42,10 @@ if (localStorage.storedData){
 //dynamic navigation for main nav
 $('nav >ul').on('click','li',function(){
   var mainId = $('#'+$(this).attr('data-link'));
-  
+  var closures = $('#practiceClosures');
+ 
   mainId.show();
-  $('section').not(mainId).hide();
+  $('main > section').not(mainId).hide();
 });
 
 
