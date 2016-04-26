@@ -39,15 +39,6 @@ if (localStorage.storedData){
 
 //##### begin event listeners ########################
 
-//dynamic navigation for main nav
-$('nav >ul').on('click','li',function(){
-  var mainId = $('#'+$(this).attr('data-link'));
-  
-  mainId.show();
-  $('section').not(mainId).hide();
-});
-
-
 //portfolio nav: filter objects being shown by nav category selected
 function portfolioClick(){
   $('#portfolioNavUl').on('click','li',function(){
@@ -59,7 +50,6 @@ function portfolioClick(){
     var filteredArray = $.grep(Project.allData, function(cat,i) {  //filter data by category
       return (cat.category === categorySelected);
     });
-    console.log(filteredArray);
     filteredArray.forEach(function(a){  //append filtered data to section
       $('.portfolioContent').append(a.toHtml()).show();
     });
@@ -113,3 +103,19 @@ $button2.on("click",function(){
   $button2.hide();
   $printText.delay(800).hide('medium');
 });
+
+//######################################
+
+
+//hide and show selected section for SPA navigation
+function showSection (sectId){
+  var $mainSection = $('main > section');
+  var sectionId = $(sectId);
+  
+  sectionId.show();
+  $mainSection.not(sectionId).hide(); 
+  $('#portfolioContent').hide();
+  $('#practiceClosures').hide();
+  $p.hide();
+}
+

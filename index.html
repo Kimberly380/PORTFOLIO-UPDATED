@@ -7,7 +7,7 @@
     <link rel='stylesheet' href='css/baseStyle.css' />
     <link rel='stylesheet' href='css/layout.css' />
 
-    <!-- include handlebars template: -->
+    <!-- include handlebars template 1: -->
     <script id="portfolioTemplate" type="text/x-handlebars-template">
       <h1>{{category}}</h1>
       <h2>{{projectName}}</h2>
@@ -21,40 +21,56 @@
         {{/each}}
       </ul>
     </script>
-    <!-- finished template -->
+    
+    <!-- include handlebars template 2: -->
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
+        <p>Last updated: {{updated_at}}</p>
+        {{#if watchers_count}}
+          <p>{{watchers_count}} watching this repo</p>
+        {{/if}}
+      </li>
+    </script>
+    
   </head>
 
   <body>
     <header>
       <nav>
         <ul>
-          <li class="navLeft1" data-link="aboutView">About</li>
-          <li class="navLeft2" data-link="portfolioView">Portfolio</li>
-          <li data-link="homeView"><img src='images/myLogo.png' /></li>
-          <li class="navRight1" data-link="resumeView">Resume</li>
-          <li class="navRight2" data-link="contactView">Contact</li>
+          <li class="navLeft1"><a href='about'>About</a></li>
+          <li class="navLeft2" ><a href='portfolio'>Portfolio</a></li>
+          <li><a href='home'><img src='images/myLogo.png' /></a></li>
+          <li class="navRight1" ><a href='Resume'>Resume</a></li>
+          <li class="navRight2"><a href='Contact'>Contact</a></li>
         </ul>
       </nav>
     </header>
-    
+      
+  <main>  
+    <p id='loadError'></p>
     <section id='practiceClosures'>
-      <label>What's your name?</label>
+      <label for="userName">What's your name?</label>
       <input  id="userName"></input>
       <button id="buttonOne">ClickMe!</button>
       <p id="output"></p>
       <button id="buttonTwo">Click to clear page</button>
     </section>
-    
+     
     <section id="homeView">
       <section class='homeContent'>
         <h1>HERE'S MY INTRO!</hi>
       </section>
-    </sectionn>
+    </section>
 
     <section id="aboutView">
-          <section class='aboutContent'>
-            <h1>THIS PAGE IS ALL ABOUT ME!!</hi>
-          </section>
+      <section class='aboutContent'>
+        <h1>THIS PAGE IS ALL ABOUT ME!!</hi>
+      </section>
     </section>
 
     <section id="portfolioView">
@@ -67,10 +83,7 @@
         </ul>
         <h3>Click on project type you'd like to see.</h3>
       </section>
-      <section class='portfolioContent'>
-        <div id="mainImage"></div>
-        <div id="mainText"></div>
-        <div id="thumbnailImg"</div>
+      <section id='portfolioContent'>
       </section>
         <div id='dataAlert'>So sorry. My portfolio is unavailable at this time.</div>
     </section>
@@ -86,12 +99,18 @@
         <h1>HERE'S MY NUMBER.  CALL ME!</hi>
       </section>
     </section>
-
- 
+  </main>
+    <script src='js/page.js'></script>
     <script src='https://code.jquery.com/jquery-2.2.3.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src='data/myData.json'></script>
     <script src='js/app.js'></script>
+    <script src='js/portfolioController.js'></script>
+    <script src='js/homeController.js'></script>
+    <script src='js/contactController.js'></script>
+    <script src='js/aboutController.js'></script>
+    <script src='js/resumeController.js'></script>
+    <script src='js/routes.js'></script>
   </body>
 </html>
 
