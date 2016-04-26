@@ -28,16 +28,17 @@
     <header>
       <nav>
         <ul>
-          <li class="navLeft1" data-link="aboutView">About</li>
-          <li class="navLeft2" data-link="portfolioView">Portfolio</li>
-          <li data-link="homeView"><img src='images/myLogo.png' /></li>
-          <li class="navRight1" data-link="resumeView">Resume</li>
-          <li class="navRight2" data-link="contactView">Contact</li>
+          <li class="navLeft1"><a href='about'>About</a></li>
+          <li class="navLeft2" ><a href='portfolio'>Portfolio</a></li>
+          <li><a href='home'><img src='images/myLogo.png' /></a></li>
+          <li class="navRight1" ><a href='Resume'>Resume</a></li>
+          <li class="navRight2"><a href='Contact'>Contact</a></li>
         </ul>
       </nav>
     </header>
-        
+      
   <main>  
+    <p id='loadError'></p>
     <section id='practiceClosures'>
       <label for="userName">What's your name?</label>
       <input  id="userName"></input>
@@ -68,10 +69,7 @@
         </ul>
         <h3>Click on project type you'd like to see.</h3>
       </section>
-      <section class='portfolioContent'>
-        <div id="mainImage"></div>
-        <div id="mainText"></div>
-        <div id="thumbnailImg"</div>
+      <section id='portfolioContent'>
       </section>
         <div id='dataAlert'>So sorry. My portfolio is unavailable at this time.</div>
     </section>
@@ -94,7 +92,10 @@
     <script src='data/myData.json'></script>
     <script src='js/app.js'></script>
     <script src='js/portfolioController.js'></script>
+    <script src='js/homeController.js'></script>
+    <script src='js/contactController.js'></script>
     <script src='js/aboutController.js'></script>
+    <script src='js/resumeController.js'></script>
     <script src='js/routes.js'></script>
   </body>
 </html>

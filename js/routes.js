@@ -1,9 +1,22 @@
 
+//incorporate page.js navigation
+var $p = $('#loadError');
 
-// page.base('/');
+function setRouteMappings(){
+  page.base('/');
 
-// page('', articlesController.index);
-// page('about',aboutController.index );
-// page('admin', adminController.index);
+  page('home', homeController.index);
+  page('about',aboutController.index);
+  page('contact', contactController.index);
+  page('portfolio', portfolioController.index);
+  page('resume',resumeController.index);
+  page('*',notfound);
+ 
+  page();
+}
 
-// page();
+function notfound(){
+  $p.html('Sorry, page not found.');
+}
+
+setRouteMappings();

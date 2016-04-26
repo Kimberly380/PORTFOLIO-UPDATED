@@ -1,20 +1,18 @@
-// (function(module) {
-//   var adminController = {};
+(function(module) {
+  var portfolioController = {};
+  
+  var $portfolioNav = $('portfolioView');
+  var $portfolioData = $('portfolioContent');
+  $portfolioNav.on('click',function(){
+    $portfolioData.hide();   
+  });    
 
-//   Article.fetchAll(articleView.initAdminPage);
+  portfolioController.index = function() {
+    $('title').text('My Portfolio');
+    showSection('#portfolioView');
+  };
 
  
-//   adminController.index = function() {
-//     $('title').text('Blog Statistics');
 
-//     var $mainNav = $('.main-nav');
-//     $mainNav.find('li').hide();
-//     $mainNav.find('li:eq(0), li:gt(3)').show();
-//     $mainNav.find('li:eq(0) > a').text('Blog');
-
-//     $('main > section.tab-content').hide();
-//     $('#admin').show();
-//   };
-
-//   module.adminController = adminController;
-// })(window);
+  module.portfolioController = portfolioController;
+})(window);

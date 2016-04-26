@@ -30,8 +30,9 @@ nav li{
   padding: 15px;
 }
 
-a{
+nav li a{
   text-decoration: none;
+  color: black;
 }
 
 li{
