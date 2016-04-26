@@ -1,21 +1,25 @@
-(funciton(module) {
-    var repos = {};
-    repos.all=[];
+(function(module){
+  var repoView = {};
+  
+  var ui=function(){
+    var $about = $('#aboutView');
     
-    
-   repos.requestRepos = function(callback){
-       
-       $.ajax({
-           datatype: 'json',
-           url: 'https://api.github.com/users/Kimberly380/repos',
-           data: 'Authorization token '+githubToken,
-           success: function(data){
-               repos.all = data;
-               callback();
-               console.log(data);
-           }
-       });
-   } 
-    
- module.repos = repos;    
+    $about.find('ul').empty();
+    $about.show().siblings().hide();
+  };
+  
+  
+  var render = function(repo){
+    var repoTemplate = Handlebars.compile($('#repo-template').text());
+    return repoTemplate(repo);
+  }
+  
+  repoView.index = function(){
+    ui();
+    $('#aboutView').append(
+      repos.with('name').map(render)
+    );
+  };
+
+  module.repoView = repoView;  
 })(window);
