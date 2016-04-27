@@ -96,10 +96,10 @@ function printSomeStuff (a){
     $printText.empty().append('Congratulations, '+ b + '!' + a);   
   };   
 }
-var pushTheButton = printSomeStuff ("You pushed the button!");
+var pushTheButton = printSomeStuff ('You pushed the button!');
 
-$button2.on("click",function(){
-  $printText.empty().append("Thanks for Playing!");
+$button2.on('click',function(){
+  $printText.empty().append('Thanks for Playing!');
   $button2.hide();
   $printText.delay(800).hide('medium');
 });

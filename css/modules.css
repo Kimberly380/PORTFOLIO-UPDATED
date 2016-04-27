@@ -1,0 +1,27 @@
+/*template 2 formatting - about page*/
+li.aboutTemplate a{
+  text-decoration: none;
+  color: gray;
+}
+
+li.aboutTemplate h2{
+  font-size: 18px;
+  color: #122a44;
+  font-weight: bold;
+}
+
+li.aboutTemplate span{
+  color:#f47878;
+  padding: 0 4px 0 4px;
+}
+
+li.aboutTemplate{
+  position: relative;
+  font-size: 14px;
+  /*width: 35%;*/
+  top: 25px;
+  left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 5px;
+}

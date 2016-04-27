@@ -6,6 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=yes'>
     <link rel='stylesheet' href='css/baseStyle.css' />
     <link rel='stylesheet' href='css/layout.css' />
+    <link rel='stylesheet' href='css/modules.css'/>
 
     <!-- include handlebars template 1: -->
     <script id="portfolioTemplate" type="text/x-handlebars-template">
@@ -24,12 +25,12 @@
     
     <!-- include handlebars template 2: -->
     <script id="repo-template" type="text/x-handlebars-template">
-      <li>
-        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
-        <p>Description: {{description}}</p>
-        <p>Language: {{language}}</p>
-        <p>Created: {{created_at}}</p>
-        <p>Last updated: {{updated_at}}</p>
+      <li class='aboutTemplate'>
+        <a href="{{html_url}}" target="_blank"><h2>{{name}}</h2></a>
+        <p><span>Description:</span> {{description}}</p>
+        <p><span>Language:</span> {{language}}</p>
+        <p><span>Created:</span> {{created_at}}</p>
+        <p><span>Last updated:</span> {{updated_at}}</p>
         {{#if watchers_count}}
           <p>{{watchers_count}} watching this repo</p>
         {{/if}}
@@ -66,13 +67,13 @@
         <h1>HERE'S MY INTRO!</hi>
       </section>
     </section>
-
-    <section id="aboutView">
+    
+    <section id='aboutView'>
+      <h1>GitHub Projects</hi>
       <section class='aboutContent'>
-        <h1>THIS PAGE IS ALL ABOUT ME!!</hi>
       </section>
-    </section>
-
+    </section> 
+   
     <section id="portfolioView">
       <section id="portfolioNav">
         <ul id='portfolioNavUl'>
@@ -104,7 +105,10 @@
     <script src='https://code.jquery.com/jquery-2.2.3.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src='data/myData.json'></script>
+    <script src='js/githubtoken.js'></script>
     <script src='js/app.js'></script>
+    <script src='js/repo.js'></script>
+    <script src='js/repoView.js'></script>
     <script src='js/portfolioController.js'></script>
     <script src='js/homeController.js'></script>
     <script src='js/contactController.js'></script>
