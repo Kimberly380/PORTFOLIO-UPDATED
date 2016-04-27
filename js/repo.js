@@ -7,15 +7,14 @@
   repos.requestRepos = function(callback){
        
     $.ajax({
-      datatype: 'json',
-      url: 'https://api.github.com/users/Kimberly380/repos',
-      data: 'Authorization token '+githubToken,  //githubToken found in githubToken.js
-      success: function(data){
+      url: '/github/user/repos' +
+           '?per_page=50'+
+            '&sort=update',
+      type: 'GET',
+      success: function(data, message, xhr){
         repos.all = data;
-        callback();   
-        console.log(data);
       }
-    });
+    }).done(callback);
   }; 
   
   //function is called on repoView.js
