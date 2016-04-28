@@ -5,7 +5,7 @@ var $p = $('#loadError');
 function setRouteMappings(){
   page.base('/');
 
-  page('home', homeController.index);
+  page('', homeController.index);
   page('about',aboutController.index);
   page('contact', contactController.index);
   page('portfolio', portfolioController.index);
